@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+</head>
+
+<body>
+    <a href="mailto:manasa.peram@zelarsoft.com,manasaperam1980@gmail.com,krithika@zelarsoft.com,sashrikaalladi@gmail.com,sashrika@zelarsoft.com,krithika.alladi3@gmail.com"
+        onclick="sendEmailValidationRequest('manasa.peram@zelarsoft.com,manasaperam1980@gmail.com,krithika@zelarsoft.com,sashrikaalladi@gmail.com,sashrika@zelarsoft.com,krithika.alladi3@gmail.com')">click to send mail</a>
+    <script>
+        const apiKey = 'a5e9bb2f65f74b05acf2147fb5c5caab&email=sashrikaalladi@gmail.com';
+        const apiURL = 'https://emailvalidation.abstractapi.com/v1/?api_key=a5e9bb2f65f74b05acf2147fb5c5caab&email=sashrikaalladi@gmail.com'
+        const sendEmailValidationRequest = async (email) => {
+            try {
+                const response = await fetch(apiURL + '&email=' + email);
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                throw error;
+            }
+        
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "sashrikaalladi@gmail.com",
+            Password: "DB6EF443ED29438488F38175B24B10EFBAD0",
+            To: 'manasa.peram@zelarsoft.com,manasaperam1980@gmail.com,krithika@zelarsoft.com,sashrikaalladi@gmail.com,sashrika@zelarsoft.com,krithika.alladi3@gmail.com',
+            From: "sashrikaalladi@gmail.com",
+            Subject: "Mail from sashii",
+            Body: "just learned to send mutltiple files sir",
+            Attachments: [
+          {
+            name:"protien.pdf",
+            path:"https://www.todaysdietitian.com/pdf/webinars/ProteinContentofFoods.pdf"
+        },
+            {
+           name:"diet.pdf",
+            path:"https://www.healthkart.com/store/weightLoss/dietPlans/weight_loss_non_veg.pdf"
+          },
+          {
+            name:"bc.pdf",
+            path:"https://i.pinimg.com/736x/e3/f3/4d/e3f34de992ae4267f272550a5935447f.jpg"
+          }
+        ]
+
+        }).then(
+            message => alert(message)
+        );
+    }
+
+    </script>
+</body>
+
+</html>

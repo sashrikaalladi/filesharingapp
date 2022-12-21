@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		HTML | DOM Video loop Property
+	</title>
+	<style>
+		h1 {
+			color: green;
+		}
+		
+		h2 {
+			font-family: Impact;
+		}
+		
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>GeeksforGeeks</h1>
+	<h2>Video loop Property</h2>
+	<br>
+
+	<video id="Test_Video"
+		width="360"
+		height="240"
+		controls>
+	
+		<source src="samplevideo.mp4"
+				type="video/mp4">
+		<source src="movie.ogg"
+				type="video/ogg">
+	</video>
+
+	<p>
+	For enabling the loop on the video,
+	double click the "Enable Loop" button.
+	</p>
+	<p>
+	For checking the loop status on the video,
+	double click the "Check Loop" button.
+	</p>
+
+	<button ondblclick="Enable_Loop()"
+			type="button">
+	Enable loop
+	</button>
+	<button ondblclick="Check_Loop()"
+			type="button">
+	Check Loop
+</button>
+
+	<p id="test"></p>
+
+	<script>
+		var v = document.getElementById(
+		"Test_Video");
+
+		function Enable_Loop() {
+			v.loop = true;
+			v.load();
+		}
+
+		function Check_Loop() {
+			alert(v.loop);
+		}
+	</script>
+
+</body>
+
+</html>

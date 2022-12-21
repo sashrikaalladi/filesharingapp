@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="profile">
+            <img src="">
+        </div>
+        <figure>
+            <h2></h2>
+            <figcaption>audiofile</figcaption>
+            <audio class="aud" controls src=" ">
+                <code>audio</code> element.
+            </audio>
+        </figure>
+    </header>
+    <lable>select any audio file:<br>
+        <input type="file" accept="audio/*" placeholder="" class="profile-aud">
+    </lable>
+    <br><br>
+    <button type="submit">Upload</button>
+    <script>
+        const a = () => {
+            const profileAud = document.querySelector('.input.profile-aud').files[0];
+            return profileAud;
+        }
+        const b = () => {
+            const profileAud = a();
+            const profileAudUrl = URL.createObjectURL(profileAud);
+            return profileAudUrl;
+        }
+        const c = () => {
+            const profileAudUrl = b();
+            document.querySelector('.aud').setAttribute('src', profileAudUrl);
+        }
+        document.querySelector('button').addEventListener('click', (e) => {
+        e.preventDefault();
+        a();
+        });
+    </script>
+</body>
+
+</html>

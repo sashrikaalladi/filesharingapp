@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuizen-Docs</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .sidepanel {
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgb(255, 255, 255);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      line-height: 50px;
+
+
+    }
+
+    .app-name {
+      font-weight: 900;
+      font-size: 16px;
+      color: black;
+      margin-left: 20px;
+      font-style: normal;
+    }
+
+    ul a {
+      text-decoration: none;
+    }
+
+    .sidepanel .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 10px;
+      color: black;
+    }
+
+    body {
+      background-color: hsl(204, 24%, 96%);
+      line-height: 1;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: rgb(155, 149, 149);
+      color: white;
+      padding: 10px 10px;
+      border: none;
+    }
+
+    #one {
+      height: 100vh;
+      width: 300px;
+      float: right;
+      box-sizing: border-box;
+      background-color: rgb(250, 251, 253);
+      text-align: center;
+      margin-top: -40px;
+
+    }
+
+    .container {
+      display: flex;
+      margin-top: 90px;
+      flex-wrap: wrap;
+      padding: 10px;
+      justify-content: space-around;
+      margin-left: 130px;
+    }
+
+    .item {
+      display: inline-flex;
+      margin: 10px;
+      width: 60px;
+      height: 60px;
+    }
+
+    html,
+    body,
+    div,
+    img {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+
+    form {
+      color: #555;
+      display: flex;
+      padding: 2px;
+      border: 1px solid currentColor;
+      border-radius: 5px;
+      width: 60%;
+      margin-left: 180px;
+      margin-top: -40px;
+    }
+
+    input[type="search"] {
+      border: none;
+      background: transparent;
+      margin: 0;
+      width: 100%;
+      padding: 7px 8px;
+      font-size: 14px;
+      color: inherit;
+      border: 1px solid transparent;
+      border-radius: inherit;
+    }
+
+    input[type="search"]::placeholder {
+      color: #bbb;
+    }
+
+
+    button[type="submit"] {
+      text-indent: -999px;
+      overflow: hidden;
+      width: 90px;
+      padding: 0;
+      margin: 0;
+      border: 1px solid transparent;
+      border-radius: inherit;
+      background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    button[type="submit"]:hover {
+      opacity: 1;
+    }
+
+    button[type="submit"]:focus,
+    input[type="search"]:focus {
+      box-shadow: 0 0 3px 0 #1183d6;
+      border-color: #1183d6;
+      outline: none;
+    }
+
+    .video {
+      margin-left: 140px;
+    }
+
+    #sev {
+      justify-content: space-around;
+      display: inline-flex;
+      margin: 10px;
+    }
+
+    #name {
+      margin-left: 150px;
+      color: rgb(128, 128, 243)
+    }
+
+    #recent {
+      width: 250px;
+      display: inline-flex;
+      margin: 10px;
+      padding: 10px;
+      box-shadow: 0 0 10px;
+      height: 90px;
+      border-radius: 10px;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div id="mySidepanel" class="sidepanel">
+    <h3 id="app-name">Fuizen-Docs</h3>
+    <ul type="none">
+      <a href="#" class="closebtn" onclick="closeNav()">close</a>
+      <li><a href="http://127.0.0.1:5500/filesharingapp/filesharingapp.html#"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fa fa-folder"></i>files</a></li>
+      <li><a href="https://www.google.com/intl/en_in/drive/"><i class="fa fa-cloud-upload"></i>uploadfile</a></li>
+      <li><a href="http://127.0.0.1:5500/emailfetchapi.html/email2.html" target="_blank"><i
+            class="fa fa-location-arrow"></i>sharefiles</a></li>
+      <li><a href="#"><i class="fa fa-gears"></i>settings</a></li>
+      <li><a href="#">storage</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </div>
+  <button class="openbtn" onclick="openNav()">☰ </button>
+  <!-- <img src="https://cdn.dribbble.com/users/56838/screenshots/7046775/media/ebcb1ddde2c3aad99dae93cd831681eb.gif"> -->
+  <form>
+    <input type="search" placeholder="Search...">
+    <button type="submit">Search</button>
+  </form>
+  <div id="one">
+    <h2>
+      <pre>Downloads            ...</pre>
+    </h2><br><br><br>
+    <p>Today</p>
+    <div id="recent">
+      <p><b>Audio/mp4</b></p><br>
+      <audio controls>
+        <source src="/image/Let It Go - Instrumental ! Frozen.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+  <div class="container">
+    <figure>
+      <a href="http://127.0.0.1:5500/filesharingapp/image.html"><img class="item" id="1"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvuC-b6Elhw8yhMvxp8psQqilchWb692unUDTl0fmoRW171Q9jzSNYNyjUKOLJLUW5Ms&usqp=CAU"></a>
+      <figcaption>Images</figcaption>
+    </figure>
+    <figure>
+      <a href="http://127.0.0.1:5500/filesharingapp/audio.html"><img class="item"
+          src="https://cdn1.vectorstock.com/i/thumb-large/18/30/music-icon-white-on-the-blue-background-vector-3451830.jpg"></a>
+      <figcaption>Music</figcaption>
+    </figure>
+    <figure>
+      <img class="item"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToFWi-7gcTtnOcwhfbkmLmGbiD431N9m7oBw&usqp=CAU">
+      <figcaption>video</figcaption>
+    </figure>
+    <figure>
+      <img class="item"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOumfNNWzoim8HC6ToIHU--5W8lFL2mHoYXByL41tPDrDB43JwvTFi_mwqM6GBiLC7pQg&usqp=CAU">
+      <figcaption>Downloads</figcaption>
+    </figure>
+    <figure>
+      <a href="https://www.google.com/intl/en_in/drive/"><img class="item"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6-et4gN63bC3cT06vqUqsTm3-12H5fJdh2A&usqp=CAU"></a>
+      <figcaption>Documents</figcaption>
+    </figure>
+  </div>
+  <h2 id="name">Preview</h2>
+  <div class="video">
+    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Nature.gif" id="sev" width="250" height="230"> -->
+    <video id="sev" width="250" height="240" autoplay>
+    <source src="/image/road.mp4" type="video/mp4">
+    </video> 
+     <video id="sev" width="250" height="240" autoplay>
+      <source src="/image/beach.mp4" type="video/mp4">
+    </video> 
+    <video id="sev" width="250" height="240" autoplay>
+      <source src="/image/sunlight.mp4" type="video/mp4">
+    </video> 
+  </div>
+  <script>
+    function openNav() {
+      document.getElementById("mySidepanel").style.width = "150px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidepanel").style.width = "0";
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="filetag" multiple accept=".jpg,.jpeg,.png,.gif">
+    <img id="preview">
+    <script>
+        const fileSelector=document.getElementById('filetag');
+const display = document.getElementById("preview");
+
+fileSelector.addEventListener('change',(e)=>{
+    //gets all the files uploaded
+    let fileList = e.target.files;
+    console.log(fileList)
+
+    for(i=0;i<fileList.length;i++){
+        //add a new fileReader for each element
+        let reader = new FileReader();
+
+        reader.addEventListener("load", () =>{  
+            //store each uploaded image into localStorage
+                localStorage.setItem(`img${i}`,reader.result)
+                console.log(i)
+        })
+        reader.readAsDataURL(fileList[i]);
+    }
+})
+    </script>
+</body>
+</html>
